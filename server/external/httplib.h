@@ -3128,7 +3128,6 @@ inline bool mmap::open(const char *path) {
   if (!::GetFileSizeEx(hFile_, &size)) { return false; }
   // If the following line doesn't compile due to QuadPart, update Windows SDK.
   // See:
-  // https://github.com/yhirose/cpp-httplib/issues/1903#issuecomment-2316520721
   if (static_cast<ULONGLONG>(size.QuadPart) >
       (std::numeric_limits<decltype(size_)>::max)()) {
     // `size_t` might be 32-bits, on 32-bits Windows.
