@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Buddy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💰 Budget Buddy</h1>
+    </header>
+
+    <!-- Auth Section -->
+    <section id="auth-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-error" class="error"></p>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard-section" class="hidden">
+      <div class="actions">
+        <h2>Welcome, <span id="display-username"></span></h2>
+        <button id="logout-btn">Logout</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Add Expense</h3>
+        <form id="expense-form">
+          <input type="number" id="amount" placeholder="Amount" required />
+          <input type="text" id="category" placeholder="Category" required />
+          <input type="text" id="note" placeholder="Note" />
+          <input type="date" id="date" required />
+          <button type="submit">Add Expense</button>
+        </form>
+      </div>
+
+      <div class="expenses-section">
+        <h3>Expense History</h3>
+        <table id="expenses-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Amount</th>
+              <th>Category</th>
+              <th>Note</th>
+              <th>Date</th>
+              <th>Actions</th> <!-- ✅ Added so Delete buttons display -->
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="analytics-section">
+        <h3>Analytics</h3>
+        <div id="analytics"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js" type="module"></script>
+</body>
+</html>

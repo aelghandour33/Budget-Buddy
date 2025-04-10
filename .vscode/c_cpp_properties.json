@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "name": "macOS",
+      "includePath": [
+        "${workspaceFolder}/server/external",
+        "${workspaceFolder}/server/managers",      
+        "/usr/local/mysql-connector-c++-8.0.33/include",     // ✅ First found path
+        "/usr/local/mysql-connector-cpp/include",            // ✅ Second found path
+        "/usr/local/include",
+        "/Users/ahmedelghandour/Downloads/mysql-connector-c++-8.0.32-macos13-x86-64bit/include",
+        "/Users/ahmedelghandour/Downloads/mysql-connector-c++-8.0.32-macos13-x86-64bit/include/jdbc"
+
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "macos-clang-x64"
+    }
+  ],
+  "version": 4
+}
