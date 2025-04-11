@@ -11,11 +11,11 @@ export function renderDashboard() {
     return;
   }
 
-  // ✅ Hide login and show dashboard
+  // Hide login and show dashboard
   document.getElementById("auth-section").classList.add("hidden");
   document.getElementById("dashboard-section").classList.remove("hidden");
 
-  // ✅ Display username from JWT
+  //  Display username from JWT
   try {
     const payload = JSON.parse(atob(token.split('.')[1]));
     document.getElementById("display-username").textContent = payload.username || "User";
@@ -23,11 +23,11 @@ export function renderDashboard() {
     console.warn("Invalid token format:", e);
   }
 
-  // ✅ Fetch and render expenses and analytics
+  //  Fetch and render expenses and analytics
   fetchExpenses(token).then(renderTable).catch(console.error);
   fetchAnalytics(token).then(renderAnalytics).catch(console.error);
 
-  // ✅ Attach submit handler only once
+  //  Attach submit handler only once
   if (!formListenerAttached) {
     const expenseForm = document.getElementById("expense-form");
     expenseForm.addEventListener("submit", event => {
@@ -51,10 +51,10 @@ export function renderDashboard() {
         });
     });
 
-    formListenerAttached = true; // 🚫 Prevent duplicate listeners
+    formListenerAttached = true; //  Prevent duplicate listeners
   }
 
-  // ✅ Logout
+  // Logout
   document.getElementById("logout-btn").onclick = () => {
     localStorage.removeItem("token");
     location.reload();
